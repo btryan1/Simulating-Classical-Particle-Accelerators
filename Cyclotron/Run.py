@@ -1,10 +1,13 @@
-from tkinter import Y
-from Particle import Proton
-from GeneralEMField2 import EMField
 import pandas as pd
-from GenerateParticleBunch import ChargedParticleBunch
 import numpy as np
+import sys
+import os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from Physics.GenerateEMField import EMField
+from Physics.Particle import Proton
+from Physics.GenerateParticleBunch import ChargedParticleBunch
+print('All modules have been imported')
 time = 0  # initial time stamp
 time2=0
 deltat =1e-07  # time steps of 1ms
@@ -28,8 +31,10 @@ Average_Velocities=[]
 Average_Kinetic_Energies=[]
 i=0
 it=0
+print('Starting Simulation')
 while time<=10*Time_period:
     if i==0:
+        print('Initial Spread Saved')
         times.append(time)
         Averages=CM.Averages(Bunch)
         Average_Positons.append(Averages[0])
@@ -40,6 +45,7 @@ while time<=10*Time_period:
         times.append(time)
         i+=1
     else:
+        print('Simulation in progress:',time,it)
         Y_avg=Average_Positons[-1]
         y=Y_avg[1]
         check=np.abs(y-offset)
@@ -56,7 +62,6 @@ while time<=10*Time_period:
             times.append(time)
             print(SQ_Val,it)
         else:
-
             Averages=CM.Averages(Bunch)
             Average_Positons.append(Averages[0])
             Average_Velocities.append(Averages[1])
