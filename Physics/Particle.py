@@ -46,20 +46,10 @@ class Proton(ChargedParticle):
         return 'Charged Particle: {0}, Mass: {1:12.3e}, Charge: {2:12.3e}, Position: {3}, Velocity: {4}, Acceleration: {5}'.format(self.name,self.mass,self.charge,self.position, self.velocity,self.acceleration)
 
 class AntiProton(ChargedParticle):
-    def __init__(self, position=np.array([0, 0, 0], dtype=float), velocity=np.array([0, 0, 0], dtype=float), acceleration=np.array([0, 0, 0],dtype=float), name='Anit-Proton', mass=1.6726219E-27,charge=-1.602176634E-19):
-        super().__init__(position, velocity, acceleration, name, mass,charge)
-    def __repr__(self):
-        return 'Charged Particle: {0}, Mass: {1:12.3e}, Charge: {2:12.3e}, Position: {3}, Velocity: {4}, Acceleration: {5}'.format(self.name,self.mass,self.charge,self.position, self.velocity,self.acceleration)
+    def __init__(self, position=np.array([0, 0, 0], dtype=float), velocity=np.array([0, 0, 0], dtype=float), acceleration=np.array([0, 0, 0], dtype=float), name='Anti-Proton', mass=1.6726219E-27, charge=-1.602176634E-19):
+        super().__init__(position, velocity, acceleration, name, mass, charge)
 
-class DeuteriumNucleus(ChargedParticle):
-    def __init__(self, position=np.array([0, 0, 0], dtype=float), velocity=np.array([0, 0, 0], dtype=float), acceleration=np.array([0, 0, 0],dtype=float), name='Deuterium Nucleus', mass=3.343580719E-27,charge=1.602176634E-19):
-        super().__init__(position, velocity, acceleration, name, mass,charge)
     def __repr__(self):
-        return 'Charged Particle: {0}, Mass: {1:12.3e}, Charge: {2:12.3e}, Position: {3}, Velocity: {4}, Acceleration: {5}'.format(self.name,self.mass,self.charge,self.position, self.velocity,self.acceleration)
+        return 'Charged Particle: {0}, Mass: {1:12.3e}, Charge: {2:12.3e}, Position: {3}, Velocity: {4}, Acceleration: {5}'.format(self.name, self.mass, self.charge, self.position, self.velocity, self.acceleration)
 
 
-class AntiDeuteriumNucleus(ChargedParticle):
-    def __init__(self, position=np.array([0, 0, 0], dtype=float), velocity=np.array([0, 0, 0], dtype=float), acceleration=np.array([0, 0, 0],dtype=float), name='Anti Deuterium Nucleus', mass=3.343580719E-27,charge=-1.602176634E-19):
-        super().__init__(position, velocity, acceleration, name, mass,charge)
-    def __repr__(self):
-        return 'Charged Particle: {0}, Mass: {1:12.3

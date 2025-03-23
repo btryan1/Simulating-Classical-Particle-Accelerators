@@ -1,6 +1,13 @@
-from Particle import Proton,AntiProton,DeuteriumNucleus,AntiDeuteriumNucleus
-from GeneralEMField2 import EMField
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import numpy as np
+
+from Physics.Particle import Proton
+from Physics.GenerateEMField import EMField
 
 ParticleType=Proton
 
